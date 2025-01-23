@@ -1,3 +1,6 @@
+// Dieses Java-Programm berechnet das Guthaben einer Geldanlage basierend auf der gewählten Verzinsung
+// und der Bonuszahlung für eine angegebene Laufzeit und einen Anlagebetrag. Der Benutzer kann zwischen
+// verschiedenen Verzinsungsoptionen wählen und das endgültige Guthaben wird berechnet.
 import java.util.Scanner;
 
 public class Geldanlage {
