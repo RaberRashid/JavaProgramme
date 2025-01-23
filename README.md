@@ -1,58 +1,71 @@
-import java.util.Scanner;
 
-public class pangramm {
+public class Anzahlsterne {
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Geben sie eine ganze Zahl ein: \n");
-		long eingabe = sc.nextLong();
-		boolean ergebnis = istPangramm(eingabe);
-		System.out.print(ergebnis);
-		sc.close();
-	}
-	static boolean istPangramm(long x) {
-		long letzteziffer = 0;
-		boolean hat0 = false, hat1 = false, hat2 = false, hat3 = false, hat4 = false;
-		boolean hat5 = false, hat6 = false, hat7 = false, hat8 = false, hat9 = false;
 		
-		while (x > 0) {
-			letzteziffer = x % 10;
-			
-			if (letzteziffer == 0) {
-				hat0 = true;
+		char[][] zeichen = {
+				{'A','B',' '}, 
+				{'*','B','C'}, 
+				{'*','*','*'}};
+		
+		char[][] zeichen2 = {
+				{'A','B',' ','*','*'}, 
+				{'*','B','C','A', '*'}, 
+				{'*','*','*', '*','*'}};
+		
+		System.out.println("Analyse für Feld 1:");
+		berechneSterneProZeile(zeichen);
+		berechneSterneProSpalte(zeichen);
+		berechneAnzahlZeilen(zeichen);
+		
+		System.out.print("\n----------------------------\n");
+		
+		System.out.println("Analyse für Feld 2:");
+		berechneSterneProZeile(zeichen2);
+		berechneSterneProSpalte(zeichen2);
+		berechneAnzahlZeilen(zeichen2);
+		
+	}
+	public static void berechneSterneProZeile(char[][] feld) {
+		
+		for (int i=0; i<feld.length; i++){
+			int n = 0;
+			for (int j=0; j<feld[i].length; j++){
+				if(feld[i][j] == '*') {
+					n++;
+				}
 			}
-			else if (letzteziffer == 1) {
-				hat1 = true;
-			}
-			else if (letzteziffer == 2) {
-				hat2 = true;
-			}
-            else if (letzteziffer == 3) {
-            	hat3 = true;
-			}
-            else if (letzteziffer == 4) {
-            	hat4 = true;
-			}
-            else if (letzteziffer == 5) {
-            	hat5 = true;
-			}
-            else if (letzteziffer == 6) {
-            	hat6 = true;
-			}
-            else if (letzteziffer == 7) {
-            	hat7 = true;
-            }
-            else if (letzteziffer == 8) {
-            	hat8 = true;
-			}
-            else if (letzteziffer == 9) {
-            	hat9 = true;
-			}		
-			x = x/10;
+			System.out.print(i + ": " +n +"\n");
 		}
-		return hat0 && hat1 && hat2 && hat3 && hat4 && hat5 && hat6 && hat7 && hat8 && hat9;
-		
+		System.out.print("\n");
 	}
-	
-
+	public static void berechneSterneProSpalte(char[][] feld) {
+		
+		for (int j=0; j<feld[0].length; j++){
+			int n=0;
+			for (int i=0; i< feld.length; i++){
+				if(feld[i][j] == '*') {
+					n++;
+				}
+			}
+			System.out.print(j + ": " +n +"\n");
+		}
+		System.out.print("\n");
+	}
+    public static void berechneAnzahlZeilen(char[][] feld) {
+    	
+    	int z = 0;
+    	for(int i = 0; i<feld.length; i++) {
+    		int n=0;
+    		for(int j = 0; j<feld[i].length; j++) {
+    			if(feld[i][j] == '*') {
+    				n++;
+    			}
+    		}
+    		if(n>1) {
+    			z++;
+    		}
+    	}
+    	System.out.print(z + " Zeilen");
+    }
 }
