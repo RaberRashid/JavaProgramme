@@ -1,4 +1,5 @@
-
+// Dieses Java-Programm zählt die Sterne (*) in jeder Zeile und Spalte eines 2D-Zeichenfeldes
+// und ermittelt, wie viele Zeilen mehr als einen Stern enthalten.
 public class Anzahlsterne {
 	
 	public static void main(String[] args) {
