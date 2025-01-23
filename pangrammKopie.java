@@ -1,3 +1,5 @@
+// Dieses Java-Programm überprüft, ob eine eingegebene Zahl ein "Pangramm" ist,
+// d.h. ob jede Ziffer von 0 bis 9 mindestens einmal in der Zahl vorkommt.
 import java.util.Scanner;
 
 public class pangramm {
