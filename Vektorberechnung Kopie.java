@@ -1,4 +1,5 @@
-
+// Dieses Java-Programm berechnet das Skalarprodukt von zwei Vektoren, extrahiert eine bestimmte Zeile
+// und eine bestimmte Spalte aus einer Matrix und gibt die Ergebnisse in der Konsole aus.
 public class Vektorberechnung {
 	public static void main(String[] args) {
 		
